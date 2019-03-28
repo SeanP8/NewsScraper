@@ -34,6 +34,7 @@ console.log(result);
         .catch(function(err) {
           // If an error occurred, log it
           console.log(err);
+          res.json(error);
         });
     });
 
