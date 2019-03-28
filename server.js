@@ -2,7 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const expressHandlebars = require("express-handlebars");
 const route = require("./routes/routes");
-// const logger = require("morgan");
+const MONGODB_URI = require("./keys")
 
 var db = require("./models");
 const PORT = process.env.PORT || 4000;
@@ -21,7 +21,7 @@ app.engine(
 app.set("view engine", "handlebars");
 app.use(express.urlencoded({ extended: true }));
 
-var production = process.env.MONGODB_URI || "mongodb://localhost/newsScraper";
+var production = MONGODB_URI || "mongodb://localhost/newsScraper";
 
 mongoose.connect(production, { useNewUrlParser: true });
 
