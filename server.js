@@ -21,33 +21,13 @@ app.engine(
 app.set("view engine", "handlebars");
 app.use(express.urlencoded({ extended: true }));
 
-//const production = process.env.MONGODB_URI || "mongodb://localhost/newsScraper";
+var production = process.env.MONGODB_URI || "mongodb://localhost/newsScraper";
 
-mongoose.connect("mongodb://localhost/newsScrapper", { useNewUrlParser: true });
+mongoose.connect(production, { useNewUrlParser: true });
 
 app.use("/", route);
 
-// app.get("/headlines", function(req, res) {
-//   db.Headline.find({})
-//     .then(function(dbHeadLine) {
-//       res.json(dbHeadLine);
-//     })
-//     .catch(function(err) {
-//       res.json(err);
-//     });
-// });
-// app.get("/", function(req, res) {
-//   res.render("home");
-// });
-// app.get("/index", function(req, res) {
-//   db.Headline.find({}).then(function(dbHeadLine) {
-//     let object = {
-//       headline: dbHeadLine
-//     };
 
-//     res.render("index", object);
-//   });
-// });
 
 app.listen(PORT, function() {
   console.log("Listening on http://localhost:" + PORT);
