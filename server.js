@@ -22,7 +22,7 @@ app.set("view engine", "handlebars");
 app.use(express.urlencoded({ extended: true }));
 
 mongoose.Promise = global.Promise;
-
+// 
 var production = MONGODB_URI || "mongodb://localhost/newsScraper";
 
 mongoose.connect(production, { useNewUrlParser: true });
