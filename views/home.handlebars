@@ -1,0 +1,48 @@
+{{!-- <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a href="/scrape" class="navbar-brand">Scrape Tech News</a>
+
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="/">Home</a></li>
+            <li><a href="/saved">Saved Articles</a></li>
+            <li><a class="btn btn-danger scrape-new">Start Scraping New Articles</a></li>
+        </ul>
+    </div>
+</nav> --}}
+<div class="container align-left">
+    <div class="jumbotron text-center">
+        <div class="row col-6">
+
+        </div>
+
+        <div class="caption">
+
+            <h1>Your scraped tech news feed</h1>
+
+
+            {{#each headline}}
+
+            <a href="{{link}}" role="button" class="btn btn-primary float-right">view full story</a>
+            <a href='/notes?_id={{_id}}' role="button" class="btn btn-primary">Create Note</a>
+            <p>{{summary}} </p>
+
+            {{/each}}
+        </div>
+    </div>
+    <div class='container'>
+
+        <div class="row float-right">
+            <div class="col-3">
+                <form action="/NewsScraper/views/home.handlebars" class="clearfix md-4" method='POST'
+                    enctype='multipart/form-data'>
+                    <div class="form-group"><label for="notes-text">Note</label>
+                        <input type="text" id='note' placeholder="enter notes here">
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>

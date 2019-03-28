@@ -1,0 +1,20 @@
+<div class='container'>
+
+    <form action="/submit" method="post">
+        <h1>Hi User!</h1>
+        <h2>Enter a Note!</h2>
+        <input type="text" name="title" placeholder="Title">
+        <textarea type="text" name="body" placeholder="Write Note Here"></textarea>
+
+        <input type="submit">
+        <input type="hidden" name="headline" value="{{headline_id}}">
+        {{!-- <a href="/user">See your profile!</a>
+        <a href="/populateduser">See your profile, populated with notes!</a> --}}
+    </form>
+    {{#each notes}}
+    <p>{{title}}</p>
+    <p>{{body}}</p>
+    {{/each}}
+
+</div>
+<script src="../public/javascript/index.js"></script>
